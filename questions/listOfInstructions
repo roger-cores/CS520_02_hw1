@@ -1,0 +1,9 @@
+movc dest src <- done
+store dest src [offset] <-
+add dest src src <-
+cmp dest src src <-
+bra cmp_code src src <-
+load dest src <-
+jmp label <-
+out dest //print dest
+HALT <-
