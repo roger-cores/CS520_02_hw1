@@ -2,7 +2,7 @@
 
 ## About sieve.asm
 
- I was able to get the program **sieve.asm** run well on my simulator but since the program uses a different register for each number to be tested for prime number, it **only prints prime numbers under 30**. This is **because the simulator has 32 registers**. *(31 is not printed because it is used to store max limit.)*
+ I was able to get the program **sieve.asm** run well on my simulator but since the program uses a different register for each number to be tested for prime number, it **only prints prime numbers under 30**. This is **because the simulator has 32 registers**. *(31 is not printed because register 31 is used to store results of CMP.)*
 
  The program had some other problems too. For example, register 2 is used to store results of register 2 and for some other calculations. I had to *movc r2, 2* to ensure that the program works correctly.
 
