@@ -82,9 +82,13 @@ public class MyCpuCore extends CpuCore<GlobalData> {
         // Call advanceClock() in a loop until an error occurs or the HALT
         // instruction is executed.
         
-        while(true){
-            advanceClock();
-//            System.out.println("\n\n");
+        try{
+            while(true){
+                advanceClock();
+    //            System.out.println("\n\n");
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
         
     }

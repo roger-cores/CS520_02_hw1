@@ -52,9 +52,6 @@ public class Execute extends PipelineStageBase<DecodeToExecute,ExecuteToMemory> 
                     ins.getOper0().setValue(result);
                     break;
                 case BRA:
-                    if(ins.getPCAddress() == 17){
-                        System.out.println("");
-                    }
                     result = MyALU.execute(ins.getOpcode(), ins.getComparison().getValue(), source2, oper0);
                     globals.fetch_waiting = false;
                     if(result==0){ //no-branch

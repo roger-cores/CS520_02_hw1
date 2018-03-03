@@ -29,7 +29,7 @@ public class Memory extends PipelineStageBase<ExecuteToMemory,MemoryToWriteBack>
             // Access memory...
             switch(ins.getOpcode()){
                 case LOAD:
-                    ins.getOper0().setValue(globals.register_file[ins.getSrc1().getValue()]);
+                    ins.getOper0().setValue(globals.memory[ins.getSrc1().getValue()]);
                     break;
             }
 //            System.out.println("memory\t\t" +  + ins.getLineNum() + " : " + ins.getInstructionString());

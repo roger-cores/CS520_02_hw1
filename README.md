@@ -1,10 +1,6 @@
 # CS520-02 HW1 Roger Correia
 
-## About sieve.asm
-
- I was able to get the program **sieve.asm** run well on my simulator but since the program uses a different register for each number to be tested for prime number, it **only prints prime numbers under 30**. This is **because the simulator has 32 registers**. *(31 is not printed because register 31 is used to store results of CMP.)*
-
- The program had some other problems too. For example, register 2 is used to store results of register 2 and for some other calculations. I had to *movc r2, 2* to ensure that the program works correctly.
+Everything works fine!
 
 ## The simulator supports all of the following:
 
@@ -18,12 +14,6 @@
 
 * Stop fetching new instructions once HALT is encountered.
 * Exception Handling
-
-## Changes made outside implementation package
-
-* Added integer codes in *EnumComparison*. These codes can then be stored in registers.
-* Added *protected GlobalData globals;* in *PipelineStageBase* for convenience.
-* Moved all the packages into com.cao.hw1 package for convenience.
 
 ## Track my progress on [Trello](https://trello.com/b/AXXj5xY3)
 
@@ -40,5 +30,20 @@ r[2]	:	17
 r[2]	:	19
 r[2]	:	23
 r[2]	:	29
+r[2]	:	31
+r[2]	:	37
+r[2]	:	41
+r[2]	:	43
+r[2]	:	47
+r[2]	:	53
+r[2]	:	59
+r[2]	:	61
+r[2]	:	67
+r[2]	:	71
+r[2]	:	73
+r[2]	:	79
+r[2]	:	83
+r[2]	:	89
+r[2]	:	97
 ```
 

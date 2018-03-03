@@ -15,7 +15,7 @@ import com.cao.hw1.implementation.GlobalData;
 public class Util {
     
     /**
-     * Checks if current instruction uses any of the dirty registers
+     * Checks if current instruction uses any of the dirty registers or memory locations
      * 
      * @param globals
      * @return true if at least one dirty register is found in the current instruction
@@ -34,7 +34,7 @@ public class Util {
         }
         switch(ins.getOpcode()){
             case LOAD:
-                result = result || (globals.register_invalid[globals.register_file[ins.getSrc1().getRegisterNumber()]] && !ins.reg_accesses[globals.register_file[ins.getSrc1().getRegisterNumber()]]);
+                //result = result || (globals.register_invalid[globals.register_file[ins.getSrc1().getRegisterNumber()]] && !ins.reg_accesses[globals.register_file[ins.getSrc1().getRegisterNumber()]]);
                 break;
 
             case STORE:
@@ -62,10 +62,10 @@ public class Util {
                 break;
 
             case STORE:
-                int index = ins.getSrc1().getValue();
-                int offset = (ins.getSrc2().isNull() ? 0 : ins.getSrc2().getValue());
-                globals.register_invalid[index + offset] = access;
-                ins.reg_accesses[index + offset] = access;
+//                int index = ins.getSrc1().getValue();
+//                int offset = (ins.getSrc2().isNull() ? 0 : ins.getSrc2().getValue());
+//                globals.register_invalid[index + offset] = access;
+//                ins.reg_accesses[index + offset] = access;
                 break;
         }
     }
@@ -92,10 +92,7 @@ public class Util {
                 int value = ins.getOper0().getValue();
                 int index = ins.getSrc1().getValue();
                 int offset = (ins.getSrc2().isNull()?0:ins.getSrc2().getValue());
-                if(index+offset > 31){
-                    System.out.println("");
-                }
-                globals.register_file[index+offset] = value; //write back
+                globals.memory[index+offset] = value; //write back
 
         }
     }
