@@ -89,11 +89,7 @@ public class Util {
 
                 }
                 break;
-            case STORE:
-                int value = ins.getOper0().getValue();
-                int index = ins.getSrc1().getValue();
-                int offset = (ins.getSrc2().isNull()?0:ins.getSrc2().getValue());
-                globals.memory[index+offset] = value; //write back
+            
 
         }
     }

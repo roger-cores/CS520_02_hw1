@@ -33,6 +33,12 @@ public class Memory extends PipelineStageBase<ExecuteToMemory,MemoryToWriteBack>
                 case LOAD:
                     ins.getOper0().setValue(globals.memory[ins.getSrc1().getValue()]);
                     break;
+                    
+                case STORE:
+                    int value = ins.getOper0().getValue();
+                    int index = ins.getSrc1().getValue();
+                    int offset = (ins.getSrc2().isNull()?0:ins.getSrc2().getValue());
+                    globals.memory[index+offset] = value; //write back
             }
 //            System.out.println("memory\t\t" +  + ins.getLineNum() + " : " + ins.getInstructionString());
             output.setInstruction(ins);
