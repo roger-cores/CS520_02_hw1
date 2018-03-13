@@ -67,7 +67,7 @@ public class Execute extends PipelineStageBase<DecodeToExecute,ExecuteToMemory> 
 //                    break;
                 case OUT:
                     
-                    System.out.println("r[" + ins.getOper0().getRegisterNumber() + "]\t:\t" + ins.getOper0().getValue());
+                    System.out.println("@@output: " + "\t" + ins.getOper0().getValue());
                     
                     break;
             }
